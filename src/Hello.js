@@ -1,9 +1,14 @@
-//import './Hello.css';
-import React, { Component } from 'react';
+import './Hello.css';
+import React from 'react';
 
-class Hello extends Component {
+class Hello extends React.Component {
     render(){
-        return <h1>Hello</h1>
+        return (
+        <div>
+            <h1>Hello</h1>
+            <p>welcome to react</p>
+        </div>
+        );
     }
 }
 
