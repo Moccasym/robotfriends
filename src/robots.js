@@ -1,9 +1,9 @@
 const robots = [
   {
     id: 1,
-    name: 'Leanne Graham',
-    username: 'Bret',
-    email: 'Sincere@april.biz'
+    name: 'Mayra Villaverde',
+    username: 'MaySmall',
+    email: 'May@small.es'
   },
   {
     id: 2,

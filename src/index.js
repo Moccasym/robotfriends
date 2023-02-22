@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import robots from './robots';
-// import Card from './Card';
-import CardList from './CardList'
+import App from './App';
+// import CardList from './CardList'
 import 'tachyons';
 import reportWebVitals from './reportWebVitals';
 import { StrictMode } from 'react';
@@ -13,7 +13,7 @@ import { StrictMode } from 'react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <StrictMode>
-        <CardList />
+        <App />
     </StrictMode>
 );
 
