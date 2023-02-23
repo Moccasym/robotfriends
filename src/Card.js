@@ -1,5 +1,5 @@
 import React from "react";
-
+// The card creates a car component that is the same (same style etc.) for the entire cardlist 
 const Card = ({name,email, id}) => {
 
     return(
