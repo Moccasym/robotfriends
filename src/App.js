@@ -33,7 +33,7 @@ class App extends Component {
         return (
             // The component returns a set of components -> the heading, the dynamic searchbox with it's function and the cardlist, which includes the cards
             <div className='tc'>
-            <h1 class='Sega'>RobotFriends</h1>
+            <h1 className="f1">RobotFriends</h1>
             <Searchbox searchChange={this.onSearchChange}/>
             <CardList robots = {filteredRobots}/>
             </div>
