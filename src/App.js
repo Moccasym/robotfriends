@@ -3,9 +3,10 @@
 
 import React, { Component } from "react";
 import CardList from "./CardList";
-import { robots } from "./robots";
+//import { robots } from "./robots";
 import Searchbox from "./Searchbox";
 import './App.css';
+import Scroll from './Scroll'
 
 
 //Using Class to be able to create a constructor function
@@ -15,9 +16,21 @@ class App extends Component {
         super()
         // State is something that can change => here you search for robot names, so the robots change that are displayed and the searchfield content
         this.state = {
-            robots: robots,
+            robots: [],
             searchfield: ''
         }
+    }
+
+    //when the App mounted the site do this 
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response=> {
+                return response.json();
+            })
+            .then(users => {
+                this.setState({robots: users})
+            })
+        //this.setState({ robots: robots})
     }
 
     // Creates an event everytime someone writes into the searchbox and saves the value typed
@@ -35,7 +48,9 @@ class App extends Component {
             <div className='tc'>
             <h1 className="f1">RobotFriends</h1>
             <Searchbox searchChange={this.onSearchChange}/>
-            <CardList robots = {filteredRobots}/>
+            <Scroll>
+                <CardList robots = {filteredRobots}/>
+            </Scroll>
             </div>
     )
 }
