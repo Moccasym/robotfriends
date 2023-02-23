@@ -3,10 +3,12 @@
 
 import React, { Component } from "react";
 import CardList from "./CardList";
-import robots from "./robots";
+import { robots } from "./robots";
 import Searchbox from "./Searchbox";
+import './App.css';
 
 
+//Using Class to be able to create a constructor function
 class App extends Component {
     // the constructor method is for creating and initializing an object
     constructor() {
@@ -17,6 +19,7 @@ class App extends Component {
             searchfield: ''
         }
     }
+
     // Creates an event everytime someone writes into the searchbox and saves the value typed
     onSearchChange = (event) => {
         this.setState({ searchfield: event.target.value });
@@ -30,7 +33,7 @@ class App extends Component {
         return (
             // The component returns a set of components -> the heading, the dynamic searchbox with it's function and the cardlist, which includes the cards
             <div className='tc'>
-            <h1>Robotfriends</h1>
+            <h1 class='Sega'>RobotFriends</h1>
             <Searchbox searchChange={this.onSearchChange}/>
             <CardList robots = {filteredRobots}/>
             </div>
