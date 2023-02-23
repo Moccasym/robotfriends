@@ -17,19 +17,23 @@ class App extends Component {
             searchfield: ''
         }
     }
-    // Creates an event everytime someone writes into the searchbox
-    onSearchChange(event){
-        console.log(event);
+    // Creates an event everytime someone writes into the searchbox and saves the value typed
+    onSearchChange = (event) => {
+        this.setState({ searchfield: event.target.value });
     }
 
     render() {
-    return (
-        // The component returns a set of components -> the heading, the dynamic searchbox with it's function and the cardlist, which includes the cards
-        <div className='tc'>
-        <h1>Robotfriends</h1>
-        <Searchbox searchChange={this.onSearchChange}/>
-        <CardList robots = {this.state.robots}/>
-        </div>
+        const filteredRobots = this.state.robots.filter(robots => {
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })
+        console.log(filteredRobots);
+        return (
+            // The component returns a set of components -> the heading, the dynamic searchbox with it's function and the cardlist, which includes the cards
+            <div className='tc'>
+            <h1>Robotfriends</h1>
+            <Searchbox searchChange={this.onSearchChange}/>
+            <CardList robots = {filteredRobots}/>
+            </div>
     )
 }
 }
