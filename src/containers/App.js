@@ -2,11 +2,11 @@
 //This way you can integrate coponents together to form molecules 
 
 import React, { Component } from "react";
-import CardList from "./CardList";
+import CardList from "../components/CardList";
 //import { robots } from "./robots";
-import Searchbox from "./Searchbox";
+import Searchbox from "../components/Searchbox";
 import './App.css';
-import Scroll from './Scroll'
+import Scroll from '../components/Scroll'
 
 
 //Using Class to be able to create a constructor function
@@ -39,8 +39,9 @@ class App extends Component {
     }
 
     render() {
-        const filteredRobots = this.state.robots.filter(robots => {
-            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { robots, searchfield } = this.state; 
+        const filteredRobots = robots.filter(robots => {
+            return robots.name.toLowerCase().includes(searchfield.toLowerCase())
         })
         console.log(filteredRobots);
         return (
