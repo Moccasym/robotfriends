@@ -7,6 +7,7 @@ import CardList from "../components/CardList";
 import Searchbox from "../components/Searchbox";
 import './App.css';
 import Scroll from '../components/Scroll'
+import ErrorBoundary from "../components/ErrorBoundary";
 
 
 //Using Class to be able to create a constructor function
@@ -50,7 +51,9 @@ class App extends Component {
             <h1 className="f1">RobotFriends</h1>
             <Searchbox searchChange={this.onSearchChange}/>
             <Scroll>
-                <CardList robots = {filteredRobots}/>
+                <ErrorBoundary>
+                    <CardList robots = {filteredRobots}/>
+                </ErrorBoundary>
             </Scroll>
             </div>
     )

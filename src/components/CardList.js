@@ -5,6 +5,9 @@ import Card from './Card';
 // The cardlist creates a set of cards, with dynamic id name and email
 const CardList = ({robots}) => 
 {
+    // if (true){
+    //     throw new Error("Noooooo");
+    // }
     return(
         <StrictMode>
         {
